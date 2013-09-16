@@ -1,4 +1,4 @@
-//BVEMaster Beta 0.65 Source Code (2009. 3. 14)
+//BVEMaster Beta 0.70 Source Code (2011. 3. 27)
 //Programming by Gunmania
 #include <stdio.h>
 #include <windows.h>
@@ -15,7 +15,8 @@ int main()
 	sec=2;
 	int num=0,num2=0,num3=0,num4=0,input;
 	int i=0, j=0, k=0;
-	char buffer[5000]={0,},filename[500]={0,}, textBuffer[MAX_COLS];;
+	char buffer[5000]={0,},filename[500]={0,}, textBuffer[MAX_COLS];
+	char buffer2[5000]={0,}, buffer3[5000]={0,},buffer4[5000]={0,},buffer5[5000]={0,};
 	printf("저장할 파일이름 입력(확장자 빼고 입력,이어쓰려면 이어쓸 파일 이름입력) : ");
 	gets(filename);
 	printf("\n");
@@ -33,7 +34,7 @@ int main()
 	}
 	menu:
 		output=fopen(filename,"a+");
-		printf("      BVEMaster Ver.0.65 \n");
+		printf("      BVEMaster Ver.0.70 \n");
 		printf("---------------------------\n");
 		printf("1. 파일 내용 출력 \n");
 		printf("-일반 구문-\n");
@@ -48,6 +49,11 @@ int main()
 		printf("9. 개발자 ID(.DeveloperID) \n");
 		printf("-Train 구문-\n");
 		printf("10. 차량 폴더(.Folder)\n");
+		printf("-Track 구문-\n");
+		printf("11. 레일 추가/수정(.Rail)\n");
+		printf("12. 레일 종료(.RailEnd)\n");
+		printf("13. 안개(.Fog)\n");
+		printf("14. 정차 위지(.Stop)\n");
 		printf("---------------------------\n");
 		printf("번호 입력(프로그램을 종료하려면 0 입력) : ");
 	scanf("%d",&input);
@@ -164,6 +170,100 @@ int main()
 		fflush(stdin);
 		printf("구문 생성 성공,파일에 쓰기 성공\n생성된 구문 : Train.Folder %s \n\n",buffer);
 		fprintf(output,"Train.Folder %s\n",buffer);
+		for(i=0;i<5000;i++)
+			buffer[i]=0;
+		goto menu;
+	}
+	if(input==11)
+	{
+		printf("선로 번호 : ");
+		fflush(stdin);
+		gets(buffer);
+		fflush(stdin);
+		printf("X 방향 거리 : ");
+		fflush(stdin);
+		gets(buffer2);
+		fflush(stdin);
+		printf("Y 방향 거리 : ");
+		fflush(stdin);
+		gets(buffer3);
+		fflush(stdin);
+		printf("구문 생성 성공,파일에 쓰기 성공\n생성된 구문 : Track.Rail %s; %s; %s;\n\n",buffer,buffer2,buffer3);
+		fprintf(output,"Track.Rail %s; %s; %s;\n",buffer,buffer2,buffer3);
+		for(i=0;i<5000;i++)
+		{
+			buffer[i]=0;
+			buffer2[i]=0;
+			buffer3[i]=0;
+		}
+		goto menu;
+	}
+	if(input==12)
+	{
+		printf("선로 번호 : ");
+		fflush(stdin);
+		gets(buffer);
+		fflush(stdin);
+		printf("X 방향 거리 (옵션) : ");
+		fflush(stdin);
+		gets(buffer2);
+		fflush(stdin);
+		printf("Y 방향 거리 (옵션) : ");
+		fflush(stdin);
+		gets(buffer3);
+		fflush(stdin);
+		printf("구문 생성 성공,파일에 쓰기 성공\n생성된 구문 : Track.RailEnd %s; %s; %s\n\n",buffer,buffer2,buffer3);
+		fprintf(output,"Track.RailEnd %s; %s; %s\n",buffer,buffer2,buffer3);
+		for(i=0;i<5000;i++)
+		{
+			buffer[i]=0;
+			buffer2[i]=0;
+			buffer3[i]=0;
+		}
+		goto menu;
+	}
+	if(input==13)
+	{
+		printf("시작 : ");
+		fflush(stdin);
+		gets(buffer);
+		fflush(stdin);
+		printf("종료 : ");
+		fflush(stdin);
+		gets(buffer2);
+		fflush(stdin);
+		printf("Red (0~255) : ");
+		fflush(stdin);
+		gets(buffer3);
+		fflush(stdin);
+		printf("Green (0~255) : ");
+		fflush(stdin);
+		gets(buffer4);
+		fflush(stdin);
+		printf("Blue (0~255) : ");
+		fflush(stdin);
+		gets(buffer5);
+		fflush(stdin);
+		printf("구문 생성 성공,파일에 쓰기 성공\n생성된 구문 : Track.Fog %s; %s; %s; %s; %s\n\n",buffer,buffer2,buffer3,buffer4,buffer5);
+		fprintf(output,"Track.Fog %s; %s; %s; %s; %s\n",buffer,buffer2,buffer3,buffer4,buffer5);
+		for(i=0;i<5000;i++)
+		{
+			buffer[i]=0;
+			buffer2[i]=0;
+			buffer3[i]=0;
+			buffer4[i]=0;
+			buffer5[i]=0;
+		}
+		goto menu;
+	}
+	if(input==14)
+	{
+		printf("표지판 방향 (-1 : 좌, 1 : 우 , 0 : 없음) : ");
+		fflush(stdin);
+		gets(buffer);
+		fflush(stdin);
+		printf("구문 생성 성공,파일에 쓰기 성공\n생성된 구문 : Track.Stop %s\n\n",buffer);
+		fprintf(output,"Track.Stop %s\n",buffer);
 		for(i=0;i<5000;i++)
 			buffer[i]=0;
 		goto menu;
