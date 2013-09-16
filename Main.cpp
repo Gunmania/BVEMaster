@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <conio.h>
 
+#define MAX_COLS 32768
+
 int main()
 {
 	FILE *output;
@@ -31,7 +33,7 @@ int main()
 	}
 	menu:
 		output=fopen(filename,"a+");
-		printf("      BVEMaster Ver.0.80 \n");
+		printf("      BVEMaster Ver.0.65 \n");
 		printf("---------------------------\n");
 		printf("1. 파일 내용 출력 \n");
 		printf("-일반 구문-\n");
