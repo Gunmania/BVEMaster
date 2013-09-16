@@ -1,4 +1,4 @@
-//BVEMaster Beta 0.70 Source Code (2011. 3. 27)
+//BVEMaster Beta 0.75 Source Code (2011. 5. 5)
 //Programming by Gunmania
 #include <stdio.h>
 #include <windows.h>
@@ -34,7 +34,7 @@ int main()
 	}
 	menu:
 		output=fopen(filename,"a+");
-		printf("      BVEMaster Ver.0.70 \n");
+		printf("      BVEMaster Ver 0.75 \n");
 		printf("---------------------------\n");
 		printf("1. 파일 내용 출력 \n");
 		printf("-일반 구문-\n");
@@ -68,6 +68,9 @@ int main()
 		}
 		k=1;
 		fclose(output);
+		printf("아무키나 누르면 메뉴로 이동합니다\n");
+		getch();
+		system("cls");
 		goto menu;
 	}
 	if(input==2)
@@ -80,6 +83,10 @@ int main()
 		fprintf(output,"%s\n",buffer);
 		for(i=0;i<5000;i++)
 			buffer[i]=0;
+		fclose(output);
+		printf("아무키나 누르면 메뉴로 이동합니다\n");
+		getch();
+		system("cls");
 		goto menu;
 	}
 	if(input==3)
@@ -88,6 +95,10 @@ int main()
 		fprintf(output,"\n",buffer);
 		for(i=0;i<5000;i++)
 			buffer[i]=0;
+		fclose(output);
+		printf("아무키나 누르면 메뉴로 이동합니다\n");
+		getch();
+		system("cls");
 		goto menu;
 	}
 	if(input==4)
@@ -100,6 +111,10 @@ int main()
 		fprintf(output,"; %s \n",buffer);
 		for(i=0;i<5000;i++)
 			buffer[i]=0;
+		fclose(output);
+		printf("아무키나 누르면 메뉴로 이동합니다\n");
+		getch();
+		system("cls");
 		goto menu;
 	}
 	if(input==5)
@@ -112,6 +127,10 @@ int main()
 		fprintf(output,"Route.Comment %s \n",buffer);
 		for(i=0;i<5000;i++)
 			buffer[i]=0;
+		fclose(output);
+		printf("아무키나 누르면 메뉴로 이동합니다\n");
+		getch();
+		system("cls");
 		goto menu;
 	}
 	if(input==6)
@@ -124,6 +143,10 @@ int main()
 		fprintf(output,"Route.Timetable %s \n",buffer);
 		for(i=0;i<5000;i++)
 			buffer[i]=0;
+		fclose(output);
+		printf("아무키나 누르면 메뉴로 이동합니다\n");
+		getch();
+		system("cls");
 		goto menu;
 	}
 	if(input==7)
@@ -136,6 +159,10 @@ int main()
 		fprintf(output,"Route.Gauge %s \n",buffer);
 		for(i=0;i<5000;i++)
 			buffer[i]=0;
+		fclose(output);
+		printf("아무키나 누르면 메뉴로 이동합니다\n");
+		getch();
+		system("cls");
 		goto menu;
 	}
 	if(input==8)
@@ -148,6 +175,10 @@ int main()
 		fprintf(output,"Route.Interval %s \n",buffer);
 		for(i=0;i<5000;i++)
 			buffer[i]=0;
+		fclose(output);
+		printf("아무키나 누르면 메뉴로 이동합니다\n");
+		getch();
+		system("cls");
 		goto menu;
 	}
 	if(input==9)
@@ -160,6 +191,10 @@ int main()
 		fprintf(output,"Route.DeveloperID %s\n",buffer);
 		for(i=0;i<5000;i++)
 			buffer[i]=0;
+		fclose(output);
+		printf("아무키나 누르면 메뉴로 이동합니다\n");
+		getch();
+		system("cls");
 		goto menu;
 	}
 	if(input==10)
@@ -172,6 +207,10 @@ int main()
 		fprintf(output,"Train.Folder %s\n",buffer);
 		for(i=0;i<5000;i++)
 			buffer[i]=0;
+		fclose(output);
+		printf("아무키나 누르면 메뉴로 이동합니다\n");
+		getch();
+		system("cls");
 		goto menu;
 	}
 	if(input==11)
@@ -196,6 +235,10 @@ int main()
 			buffer2[i]=0;
 			buffer3[i]=0;
 		}
+		fclose(output);
+		printf("아무키나 누르면 메뉴로 이동합니다\n");
+		getch();
+		system("cls");
 		goto menu;
 	}
 	if(input==12)
@@ -220,6 +263,10 @@ int main()
 			buffer2[i]=0;
 			buffer3[i]=0;
 		}
+		fclose(output);
+		printf("아무키나 누르면 메뉴로 이동합니다\n");
+		getch();
+		system("cls");
 		goto menu;
 	}
 	if(input==13)
@@ -254,6 +301,10 @@ int main()
 			buffer4[i]=0;
 			buffer5[i]=0;
 		}
+		fclose(output);
+		printf("아무키나 누르면 메뉴로 이동합니다\n");
+		getch();
+		system("cls");
 		goto menu;
 	}
 	if(input==14)
@@ -266,14 +317,16 @@ int main()
 		fprintf(output,"Track.Stop %s\n",buffer);
 		for(i=0;i<5000;i++)
 			buffer[i]=0;
+		fclose(output);
+		printf("아무키나 누르면 메뉴로 이동합니다\n");
+		getch();
+		system("cls");
 		goto menu;
 	}
 	if(input==0)
 	{
-		printf("\n이용해 주셔서 감사합니다. -건매니아-\n");
+		printf("\n이용해 주셔서 감사합니다.\nby Gunmania");
 		Sleep(sec*5000);
 	}
-	printf("잘못 입력하셨습니다.\n");
-	goto menu;
 	return 0;
 }
